@@ -1,0 +1,130 @@
+.day-time {
+    margin: 0;
+    color: #ffffff;
+    background: url('img/bg.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.night-time {
+    margin: 0;
+    color: #ffffff;
+    background: url('img/night_bg.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+
+/* body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('img/bg.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+} */
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 88, 233, 0.356); /* Adjust the color and opacity for your overlay */
+    z-index: -1;
+} 
+
+.location-time h1{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.location-time p{
+    font-size: 12px;
+}
+
+.search input{
+    border: 0;
+    border-radius: 10px !important;
+    height: 40px !important;
+}
+
+.search input::placeholder{
+    font-size: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.search .error-message{
+    border: 1px solid rgba(238, 40, 40, 0.733) !important;
+    box-shadow: 1px 1px  rgba(248, 133, 133, 0.637);
+}
+
+.search button{
+    border-radius: 10px !important;
+    width: 100px;
+    position: relative;
+    right: 15%;
+    background-color: rgb(61, 43, 226) !important;
+    border: 0 !important;
+}
+
+
+.temperature{
+    display: flex;
+}
+
+.temperature .temp{
+    font-size: 6rem;
+}
+
+.temperature .unit-condition{
+    position: relative;
+    top: 70px;
+    font-weight: 600;
+}
+
+.temperature .unit-condition .condition{
+    font-weight: 600;
+}
+
+.temperature .condition p{
+    
+    font-size: 0.8rem;
+    
+}
+
+#condition{
+    text-transform: capitalize;
+}
+
+.temperature img{
+    position: relative;
+    top: -30%;
+}
+
+.degrees-container{
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.weekly-weather{
+    background-color: rgba(43, 46, 226, 0.692);
+    border-radius: 25px;
+    height: 100%;
+}
+
+.weekly-weather p{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.weekly-weather h6{
+    font-size: 15px;
+}
