@@ -23,7 +23,7 @@ async function fetchLocationData(state) {
     getTimeAndDate(latitude, longitude)
     fetchWeatherData(latitude, longitude)
     fetchDailyWeatherData(latitude, longitude)
-    console.log(data);
+    // console.log(data);
     displayCity.textContent = `${data[0].name}, ${data[0].country} - `
 
     return data;
@@ -41,7 +41,7 @@ async function fetchWeatherData(lat, lon){
     }
     const data = await response.json();
     displayWeatherData(data);
-    console.log(data);
+    // console.log(data);
     displayCity.textContent += `${data.name}`
 
   }catch(error){
@@ -59,7 +59,7 @@ async function fetchDailyWeatherData(lat, lon){
     }
     const data = await response.json();
     displayForcastWeather(data)
-    console.log(data);
+    // console.log(data);
   }catch(error){
     console.error('Error fetching daily weather data:', error);
   }
@@ -75,7 +75,7 @@ async function getTimeAndDate(lat, lon){
     }
     
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     displayDateAndTime(data)
   }
   catch(errors){
@@ -86,13 +86,17 @@ async function getTimeAndDate(lat, lon){
 function getCurrentLocation(){
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(position=>{
+      document.querySelector('.weather-container').style.display = 'block'
+      document.querySelector('.loader-container').style.display = 'none'
         const latitude = parseFloat(position.coords.latitude)
         const longitude = parseFloat(position.coords.longitude)
         fetchWeatherData(latitude, longitude)
         getTimeAndDate(latitude, longitude)
         fetchDailyWeatherData(latitude, longitude)
-        console.log(position);
+        // console.log(position);
     }, error=>{
+      document.querySelector('.weather-container').style.display = 'block'
+      document.querySelector('.loader-container').style.display = 'none'
       console.log(error.message);
     })
   }else{
